@@ -1,0 +1,63 @@
+使用二分查找
+
+
+自己写的代码超时，感觉逻辑上没有问题
+
+```
+func search(nums []int, target int) int {
+    low :=0
+    high := len(nums)-1
+    for {
+        if low <= high{
+            mid := (low+high)/2
+            if nums[mid] == target{
+                return mid
+            }else if nums[mid] > target {
+                high = mid-1
+            }else{
+                low = mid+1
+            }
+        }
+        
+    }
+    return -1
+}
+```
+
+参考代码通过
+```
+func search(nums []int, target int) int {
+    low :=0
+    high := len(nums)-1
+    for low <= high{
+            mid := (low+high)/2
+            if nums[mid] == target{
+                return mid
+            }else if nums[mid] > target {
+                high = mid-1
+            }else{
+                low = mid+1
+            }
+        }
+    return -1
+}
+```
+
+对比发现把
+
+```
+for{
+  if low <= high{
+  }
+}
+```
+
+改成
+
+```
+ for low <= high{
+ 
+ }
+```
+
+则成功通过，以后应该避免这类结构。
