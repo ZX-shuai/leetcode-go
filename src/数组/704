@@ -25,8 +25,7 @@ func search(nums []int, target int) int {
 ```
 
 参考代码通过
-```
-func search(nums []int, target int) int {
+```func search(nums []int, target int) int {
     low :=0
     high := len(nums)-1
     for low <= high{
