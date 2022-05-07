@@ -1,0 +1,36 @@
+刚开始没有想到要创建一个虚拟节点，让虚拟节点的Next指针指向头结点
+
+在for循环时for temp.Next != nil {}会引起panic，需改为for temp != nil && temp.Next != nil{}
+
+```Golang
+func removeElements(head *ListNode, val int) *ListNode {
+    VirtualNode := &ListNode{}
+    VirtualNode.Next = head
+    temp := VirtualNode
+    for temp != nil && temp.Next != nil {
+        if temp.Next.Val == val{
+            temp.Next = temp.Next.Next
+        }
+        temp =temp.Next
+    }
+    return VirtualNode.Next
+}
+```
+
+上面代码解答错误，for循环里面没有使用if else，改正后编译通过，代码如下：
+
+```Golang
+func removeElements(head *ListNode, val int) *ListNode {
+    VirtualNode := &ListNode{}
+    VirtualNode.Next = head
+    temp := VirtualNode
+    for temp != nil && temp.Next != nil {
+        if temp.Next.Val == val{
+            temp.Next = temp.Next.Next
+        }else{
+            temp =temp.Next
+        }
+        
+    }
+    return VirtualNode.Next
+```
