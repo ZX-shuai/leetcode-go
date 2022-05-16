@@ -6,5 +6,5 @@
 
 ### 链表
 - [[203](https://github.com/ZX-shuai/leetcode-go/blob/main/src/%E9%93%BE%E8%A1%A8/203.md)]
-- [[24]()]
+- [[24](https://github.com/ZX-shuai/leetcode-go/blob/main/src/%E9%93%BE%E8%A1%A8/24.md)]
 - [[19]()]
